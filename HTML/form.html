@@ -15,15 +15,131 @@
     <form action="https://www.google.com/search" method="get">
         <table>
             <tr>
-                <td>Từ khóa:</td>
+                <td><label for="color">Màu yêu thích:</label></td>
                 <td>
-                    <input type="text" name="q">
+                    <input type="color" id="color" name="color">
+                    <input type="hidden" name="code" value="CGH">
                 </td>
             </tr>
             <tr>
-                <td></td>
+                <td><label for="language">Ngoại ngữ:</label></td>
                 <td>
-                    <button type="submit">Search</button>
+                    <select name="language" id="language">
+                        <option value="">Tiếng Anh</option>
+                        <option value="">Tiếng Nhật</option>
+                        <option value="">Tiếng Hàn</option>
+                        <option value="">Tiếng Trung Quốc</option>
+                        <option value="">Tiếng Lào</option>
+                    </select>
+                </td>
+            </tr>
+            <tr>
+                <td><label for="info">Giới thiệu</label></td>
+                <td>
+                    <textarea name="info" id="info" cols="40" rows="4"></textarea>
+                </td>
+            </tr>
+            <tr>
+                <td><label for="personalId">Số CMND:</label></td>
+                <td>
+                    <input type="number" id="personalId" name="personalId">
+                </td>
+            </tr>
+            <tr>
+                <td><label for="age">Độ tuổi:</label></td>
+                <td>
+                    <input type="range" value="10" min="10" max="100" id="age" name="age"
+                        oninput="this.title = this.value"
+                    >
+                </td>
+            </tr>
+            <tr>
+                <td><label for="phone">Số điện thoại:</label></td>
+                <td>
+                    <input type="tel" id="phone" name="phone">
+                </td>
+            </tr>
+            <tr>
+                <td><label for="fb">Facebook:</label></td>
+                <td>
+                    <input type="url" id="fb" name="fb" required >
+                </td>
+            </tr>
+            <tr>
+                <td><label for="file">Chọn file:</label></td>
+                <td>
+                    <input type="file" id="file" name="file">
+                </td>
+            </tr>
+            <tr>
+                <td><label for="avatar">Ảnh đại diện:</label></td>
+                <td>
+                    <input type="image" src="images/sunflower.jpg" id="avatar" name="avatar">
+                </td>
+            </tr>
+            <tr>
+                <td><label for="keyword">Từ khóa:</label></td>
+                <td>
+                    <input type="search" id="keyword" name="q">
+                </td>
+            </tr>
+            <tr>
+                <td><label for="username">Tên đăng nhập:</label></td>
+                <td>
+                    <input required type="text" id="username" name="username" autocomplete="on">
+                </td>
+            </tr>
+            <tr>
+                <td><label for="email">Thư điện tử:</label></td>
+                <td>
+                    <input required type="email" id="email" name="email" autocomplete="on">
+                </td>
+            </tr>
+            <tr>
+                <td><label for="pw">Mật khẩu:</label></td>
+                <td>
+                    <input type="password" id="pw" name="pw">
+                </td>
+            </tr>
+            <tr>
+                <td><label for="dob">Ngày sinh:</label></td>
+                <td>
+                    <input type="date" id="dob" name="dob" min="2022-01-01" max="2022-12-31">
+                    <input type="time">
+                    <br>
+                    <input type="datetime-local" name="" id="">
+                    <br>
+                    <input type="month">
+                    <br>
+                    <input type="week" name="" id="">
+                </td>
+            </tr>
+            <tr>
+                <td><label for="gender">Giới tính:</label></td>
+                <td>
+                    <input type="radio" name="gender" checked> Male
+                    <input type="radio" name="gender"> Female
+                </td>
+            </tr>
+            <tr>
+                <td><label for="hobby">Sở thích:</label></td>
+                <td>
+                    <input type="checkbox" name="hobby" checked> Đá banh
+                    <input type="checkbox" name="hobby"> Cầu lông
+                    <input type="checkbox" name="hobby"> Bơi lội
+                    <input type="checkbox" name="hobby" checked> Chạy bộ
+                    <input type="checkbox" name="hobby"> Nhậu
+                </td>
+            </tr>
+            <tr>
+                <td><label></label></td>
+                <td>
+                    <!-- <button type="submit">Search</button>
+                    <button type="reset">Cancel</button>
+                    <button type="button">Save</button> -->
+                    <input type="submit" value="Search">
+                    <input type="reset" value="Cancel">
+                    <input type="button" value="save">
                 </td>
             </tr>
         </table>
