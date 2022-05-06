@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Overview</title>
+</head>
+<body>
+    <!-- 
+        Các cách nhúng JS vào HTML 
+        Cách 1: inline JS
+        Cách 2: internal JS
+        Cách 3: external JS
+
+        Thông qua event(sự kiện) của HTML
+    -->
+    <!-- chia màn hình thành 2 phần: window + arrow keys -->
+    <input type="color" onchange="document.body.style.backgroundColor = this.value">
+    <br>
+    <button 
+        onclick="alert('Hello')"
+        onmouseover="this.innerText = new Date()"
+        onmouseout="this.innerText = 'Hover on me to show current datetime'"
+    >
+        Hover on me to show current datetime
+    </button>
+    <br>
+    <input type="text"
+        oninput="document.getElementById('chars').innerText = this.value.length"
+        onfocus="this.style.padding = '10px'"
+        onblur="this.style.padding = '0px'"
+    > <span id="chars">0</span>
+    <div>
+        <button 
+            onclick='document.getElementById("light").src="https://www.w3schools.com/js/pic_bulbon.gif";'
+        >
+            Turn On
+        </button>
+        <!-- <button onclick="controlLight('on')">Turn On</button> -->
+        <img id="light" src="https://www.w3schools.com/js/pic_bulboff.gif" alt="">
+        <button onclick="controlLight('off')">Turn Off</button>
+        <!-- <button
+            onclick="document.getElementById('light').src='https://www.w3schools.com/js/pic_bulboff.gif'"
+        >Turn Off</button> -->
+    </div>
+
+    <script>
+        function controlLight(status){
+            if(status == "on"){
+                document.getElementById('light').src='https://www.w3schools.com/js/pic_bulbon.gif'
+            }
+            else{
+                document.getElementById('light').src='https://www.w3schools.com/js/pic_bulboff.gif'
+            }
+        }
+    </script>
+    <script src="light.js"></script>
+</body>
+</html>
