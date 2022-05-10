@@ -1,0 +1,103 @@
+* {
+    font-family: Roboto;
+    box-sizing: border-box;
+}
+
+h1{
+    color: #f6e58d;
+    background-color: #7ed6df;
+    width: 200px;
+    padding: 10px;
+    border-radius: 10px;
+    border: 2px solid #22a6b3;
+    box-shadow: 3px 3px rgb(34, 166, 179);
+    font-family: Roboto;
+    cursor: pointer;
+}
+h1:hover{
+    box-shadow: 3px 3px #127680;
+    transform: scale(0.98);
+}
+
+h2 {
+    color: red !important;
+    background-color: green;
+    font-size: 30px;
+    font-family: Roboto;
+}
+
+#p-4 {
+    color: orange;
+    font-family: 'Courier New', Courier, monospace;
+}
+
+.paragraph {
+    color: darkgoldenrod;
+    background-color: greenyellow;
+}
+
+input:focus{
+    padding: 10px;
+}
+
+input[type=checkbox]:checked{
+    transform: scale(2);
+}
+
+p::first-letter{
+    font-size: 30px;
+}
+
+P::first-line{
+    font-weight: bold;
+}
+
+p::selection{
+    background-color: red;
+    color: orange;
+}
+/* p::before{
+    content: "* ";
+} */
+p::after{
+    content: " x";
+}
+
+a[target]{
+    text-decoration: none;
+}
+
+input[type='password']{
+    background-color: red;
+}
+
+input[name='e-mail']{
+    border:1px solid orange;
+}
+
+/* shorthand */
+#box{
+    
+    width: 100px;
+    height: 100px;
+    background-color: orange;
+    /* padding: 5px 6px 7px 8px; */
+    padding: 5px;
+    /* border-width: 1px 2px 3px 4px; */
+    /* border-top-width: 1px;
+    border-right-width: 2px;
+    border-bottom-width: 3px;
+    border-left-width: 4px;
+    border-style: solid;
+    border-color: red; */
+    border: 10px solid red;
+    /* margin-bottom:10px ;
+    margin-top: 3px;
+    margin-left: 5px;
+    margin-right: 8px; */
+    /* margin: 3px 8px 10px 5px; */
+    /* margin: 3px 8px; */
+    /* float: right;
+    margin-right:0px; */
+    margin: 0px auto;
+}
