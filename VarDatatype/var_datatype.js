@@ -12,4 +12,11 @@ let bt = `${b}^2 - ${a}^2 = (${b} - ${a}) * (${b} + ${a})`
 
 // let ptb2 = a + "x2 + " + b + "x + " + c + " = 0";
 // let ptb2 = `${a}x2 + ${b}x + ${c} = 0`;
-console.log(bt)
+// console.log(bt)
+
+let number = '132353454645';
+console.log(typeof number)
+number = Number(number);
+// number = parseInt(number);
+// number = +number;
+console.log(typeof number)
