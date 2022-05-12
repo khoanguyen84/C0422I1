@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Show data</title>
+    <style>
+        #tb>tbody>tr:nth-child(2)>td:nth-child(3){
+            background-color: green;
+        }
+    </style>
+</head>
+<body>
+    <h1 id="heading_1" class="h_1" name="head_1">Heading 1</h1>
+    <table id="tb" border="1">
+        <tbody>
+            <tr>
+                <td>1</td>
+                <td>2</td>
+                <td>3</td>
+            </tr>
+            <tr>
+                <td>4</td>
+                <td>5</td>
+                <td>6</td>
+            </tr>
+        </tbody>
+    </table>
+    <!-- 
+        1. alert
+        2. document.write
+        3. console.log (các loại console khác)
+        4. document.getElementById
+        5. document.getElementsByTagName
+        6. document.getElementsByClassName
+        7. document.getElementsByName
+        8. document.querySelector
+        9. document.querySelectorAll
+     -->
+
+     <script>
+         document.write("CodeGym Huê")
+         console.log("CodeGym Huê")
+        //  alert("CodeGym Huê")
+        // document.getElementById("heading_1").innerHTML = "CodeGym Huế"
+        // document.getElementsByTagName("h1")[0].innerHTML = "CodeGym Huế"
+        // document.getElementsByClassName('h_1')[0].innerHTML = "CodeGym Huế"
+        // document.getElementsByName('head_1')[0].innerHTML = "CodeGym Huế"
+     </script>
+</body>
+</html>
