@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Loop Statements</title>
+</head>
+
+<body>
+    <script>
+        // let score = 0;
+        // do{
+        //     score = Number(prompt("Enter score: "));
+        // }
+        // while(Number.isNaN(score) || score < 0 || score > 10)
+        // document.write(score)
+
+        // let score = 0;
+        // score = Number(prompt("Enter score: "));
+        // while(Number.isNaN(score) || score < 0 || score > 10){
+        //     score = Number(prompt("Enter score: "));
+        // }
+        // document.write(score)
+
+        let score = 0;
+        score = Number(prompt("Enter score: "));
+        for (; Number.isNaN(score) || score < 0 || score > 10;) {
+            score = Number(prompt("Enter score: "));
+        }
+        document.write(score)
+    </script>
+    <!-- <script src="loop.js"></script> -->
+</body>
+
+</html>
