@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <!-- <ol>
+        <li>Ngoại Ngữ 1
+            <ul>
+                <li><input type="checkbox"> Level A</li>
+                <li><input type="checkbox"> Level B</li>
+                <li><input type="checkbox"> Level C</li>
+            </ul>
+        </li>
+        <li>Ngoại Ngữ 2
+            <ul>
+                <li><input type="checkbox"> Level A</li>
+                <li><input type="checkbox"> Level B</li>
+                <li><input type="checkbox"> Level C</li>
+            </ul>
+        </li>
+        <li>Ngoại Ngữ 3
+            <ul>
+                <li><input type="checkbox"> Level A</li>
+                <li><input type="checkbox"> Level B</li>
+                <li><input type="checkbox"> Level C</li>
+            </ul>
+        </li>
+    </ol> -->
+    <script>
+        let language = "<ol>"
+        for (let i = 1; i <= 3; i++) {
+            language += `
+                            <li>Ngoại Ngữ ${i}
+                                <ul>
+                                    <li><input type="checkbox"> Level A</li>
+                                    <li><input type="checkbox"> Level B</li>
+                                    <li><input type="checkbox"> Level C</li>
+                                </ul>
+                            </li>
+                        `
+        }
+        language += "<ol/>"
+        document.write(language)
+    </script>
+</body>
+
+</html>
