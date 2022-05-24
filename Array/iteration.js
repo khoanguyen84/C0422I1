@@ -41,26 +41,8 @@ let jobs = [
     "Quét nhà",
     "Đón con"
 ]
-
-let htmls = jobs.map(function(job, index){
-    return `
-        <tr>
-            <td>${index + 1}</td>
-            <td id='td_${index}'>${job}</td>
-            <td>
-                <button onclick="remove(${index})">Remove</button>
-                <button onclick="cancel(${index})">Cancel</button>
-            </td>
-        </tr>
-    `
-})
-
-document.querySelector("table>tbody").innerHTML = htmls.join("");
-
-function addJob(){
-    let jobName = document.querySelector("#jobName").value;
-    jobs.push(jobName);
-
+renderJob();
+function renderJob(){
     let htmls = jobs.map(function(job, index){
         return `
             <tr>
@@ -77,23 +59,43 @@ function addJob(){
     document.querySelector("table>tbody").innerHTML = htmls.join("");
 }
 
+function addJob(){
+    let jobName = document.querySelector("#jobName").value;
+    jobs.push(jobName);
+    renderJob();
+    // let htmls = jobs.map(function(job, index){
+    //     return `
+    //         <tr>
+    //             <td>${index + 1}</td>
+    //             <td id='td_${index}'>${job}</td>
+    //             <td>
+    //                 <button onclick="remove(${index})">Remove</button>
+    //                 <button onclick="cancel(${index})">Cancel</button>
+    //             </td>
+    //         </tr>
+    //     `
+    // })
+    
+    // document.querySelector("table>tbody").innerHTML = htmls.join("");
+}
+
 function remove(index){
     jobs.splice(index, 1);
-
-    let htmls = jobs.map(function(job, index){
-        return `
-            <tr>
-                <td>${index + 1}</td>
-                <td id='td_${index}'>${job}</td>
-                <td>
-                    <button onclick="remove(${index})">Remove</button>
-                    <button onclick="cancel(${index})">Cancel</button>
-                </td>
-            </tr>
-        `
-    })
+    renderJob();
+    // let htmls = jobs.map(function(job, index){
+    //     return `
+    //         <tr>
+    //             <td>${index + 1}</td>
+    //             <td id='td_${index}'>${job}</td>
+    //             <td>
+    //                 <button onclick="remove(${index})">Remove</button>
+    //                 <button onclick="cancel(${index})">Cancel</button>
+    //             </td>
+    //         </tr>
+    //     `
+    // })
     
-    document.querySelector("table>tbody").innerHTML = htmls.join("");
+    // document.querySelector("table>tbody").innerHTML = htmls.join("");
 }
 
 function cancel(index){
