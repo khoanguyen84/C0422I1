@@ -23,7 +23,7 @@ let staffs = [
     new staff(3, "Linh", "linh@gmail.com", 9000000, "https://i.pravatar.cc/150?img=3"),
     new staff(4, "Quý", "quý@gmail.com", 11000000, "https://i.pravatar.cc/150?img=4"),
     new staff(5, "Pháp", "phap@gmail.com", 20000000, "https://i.pravatar.cc/150?img=5"),
-    new staff(6, "Dương", "duong@gmail.com", 21000000, "https://i.pravatar.cc/150?img=6"),
+    new staff(6, "Dương", "duong@gmail.com", 21000000, "https://i.pravatar.cc/150?img=7"),
 ]
 
 function renderStaff(){
