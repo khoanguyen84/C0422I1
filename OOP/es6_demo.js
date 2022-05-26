@@ -7,6 +7,9 @@ class Student {
     greeting(){
         return `${this.fullname}, ${this.age}, ${this.gender}`
     }
+    static Slogan(){
+        return 'still breath still alive'
+    }
 }
 class GraduateStudent extends Student{
     constructor(fullname, age, gender, certificate){
@@ -33,13 +36,16 @@ class GraduateStudent extends Student{
 // }
 
 
-// let khoa  = new Student("Khoa", 18, true)
+let khoa  = new Student("Khoa", 18, true)
+// console.log(khoa.Slogan())
 let trung = new GraduateStudent("Trung", 19, true, "Certification")
 // console.log(khoa.greeting())
-console.log(trung.greeting())
+// console.log(trung.greeting())
 // console.log(trung.hello())
 // console.log(Student.greeting())
+console.log(Student.Slogan())
 
+// console.log(GraduateStudent.toString())
 
 // class Transport{
 //     constructor(wheel){

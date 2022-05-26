@@ -7,7 +7,6 @@ class MyMath {
   }
 }
 
-
 class Helper{
     static calcAverageScore(score_1, score_2, score_3){
         return ((score_1 + score_2 + score_3)/3).toFixed(1)
