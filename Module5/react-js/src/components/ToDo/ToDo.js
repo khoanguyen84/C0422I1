@@ -27,6 +27,14 @@ function ToDo() {
     const handleInput = (e) => {
         setJobname(e.target.value)
     }
+
+    const handleRemove = (idx) => {
+        let confirm = window.confirm("Bạn có muốn xóa công việc này không?");
+        if (confirm) {
+            let data = jobs.filter((job, index) => index !== idx);
+            setJobs(data);
+        }
+    }
     return (
         <div className="container">
 
@@ -60,7 +68,15 @@ function ToDo() {
                 <ul className="list-group">
                     {
                         jobs.map((job, index) => (
-                            <li key={index} className="list-group-item">{job}</li>
+                            <li key={index} className="list-group-item">{job}
+                                <i className="fa fa-times text-danger ms-2 float-end" role="button" onClick={() => handleRemove(index)}></i>
+                                {/* <span role="button"
+                                    title="Remove Job"
+                                    className="ms-2 text-danger"
+                                    onClick={() => handleRemove(index)}
+                                >&times;
+                                </span> */}
+                            </li>
                         ))
                     }
                 </ul>
