@@ -4,6 +4,8 @@ import Header from './components/Header/Header';
 import Footer from './components/Footer/Footer';
 import Login from './components/Login/Login';
 import Post from './components/Post/Post';
+import Gift from './components/Gift/Gift';
+import ToDo from './components/ToDo/ToDo';
 
 function App() {
   return (
@@ -11,7 +13,9 @@ function App() {
       <Header />
       {/* <Main /> */}
       {/* <Login/> */}
-      <Post />
+      {/* <Post /> */}
+      {/* <Gift /> */}
+      <ToDo />
       <Footer />
     </>
   );
