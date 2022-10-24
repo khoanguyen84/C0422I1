@@ -7,6 +7,7 @@ import Login from './components/Login/Login';
 import Post from './components/Post/Post';
 import Gift from './components/Gift/Gift';
 import ToDo from './components/ToDo/ToDo';
+import Student from './components/Student/Student';
 
 function App() {
   return (
@@ -16,7 +17,8 @@ function App() {
       {/* <Login/> */}
       {/* <Post /> */}
       {/* <Gift /> */}
-      <ToDo />
+      {/* <ToDo /> */}
+      <Student/>
       <Footer />
     </>
   );

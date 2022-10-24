@@ -7,7 +7,7 @@ function ToDo() {
 
     // const inputRef = useRef();
 
-    const handSumit = (e) => {
+    const handleSubmit = (e) => {
         e.preventDefault();
         setJobs([
             ...jobs,
@@ -15,7 +15,7 @@ function ToDo() {
         ])
         setJobname("");
     }
-    // const handAddJob = () => {
+    // const handleAddJob = () => {
     //     setJobs([
     //         ...jobs,
     //         jobname
@@ -39,7 +39,7 @@ function ToDo() {
         <div className="container">
 
             <div className="form-group">
-                <form onSubmit={handSumit}>
+                <form onSubmit={handleSubmit}>
                     <label>Jobname</label>
                     <input
                         type="text"
@@ -61,7 +61,7 @@ function ToDo() {
                     onInput={handleInput}
                 />
                 <button className="btn btn-sm btn-danger"
-                    onClick={handAddJob}
+                    onClick={handleAddJob}
                 >Add Job</button>
             </div> */}
             <div>
