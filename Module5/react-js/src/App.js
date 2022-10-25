@@ -1,5 +1,6 @@
 import './App.css';
 import '../node_modules/@fortawesome/fontawesome-free/css/all.min.css';
+import { Routes, Route} from 'react-router-dom'; 
 import Main from './components/Main/Main';
 import Header from './components/Header/Header';
 import Footer from './components/Footer/Footer';
@@ -9,18 +10,21 @@ import Gift from './components/Gift/Gift';
 import ToDo from './components/ToDo/ToDo';
 import Student from './components/Student/Student';
 import Content from './components/Content/Content';
+import MenuLeft from './components/MenuLeft/MenuLeft';
+import ClassItem from './components/Class/ClassItem';
 
 function App() {
   return (
     <>
       <Header />
-      {/* <Main /> */}
-      {/* <Login/> */}
-      {/* <Post /> */}
-      {/* <Gift /> */}
-      {/* <ToDo /> */}
-      {/* <Student/> */}
-      <Content/>
+      <div className='container'>
+        <div className='row'>
+          <MenuLeft />
+          <Routes>
+              <Route path='/student/:classid' element={<ClassItem/>} />
+          </Routes>
+        </div>
+      </div>
       <Footer />
     </>
   );
