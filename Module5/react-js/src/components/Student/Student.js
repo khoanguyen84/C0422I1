@@ -35,6 +35,17 @@ function Student() {
     const handleSubmit = (e) => {
         e.preventDefault();
 
+        // let id = findMaxId() + 1;
+        // let newStudent = {
+        //     ...student,
+        //     id: id
+        // }
+        // let newData = [
+        //     ...students,
+        //     newStudent
+        // ]
+        // window.localStorage.setItem(student_db, JSON.stringify(newData));
+        // setStudents(newData);
         setStudents(pre => {
             let id = findMaxId() + 1;
             let newStudent = {
