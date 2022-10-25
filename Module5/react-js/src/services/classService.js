@@ -1,4 +1,5 @@
 import axios from "axios";
+
 const CLASS_API_URL = "https://6357527d9243cf412f9682ec.mockapi.io/classlist";
 class ClassService{
     static getClass(){

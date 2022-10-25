@@ -37,7 +37,7 @@ function ClassItem() {
             <h1>List Students of {classRoom}</h1>
             {
                 loading ? <Spinner /> : (
-                    <table className="table">
+                    <table className="table table-sm">
                         <thead className="table-dark">
                             <tr>
                                 <th>#ID</th>
