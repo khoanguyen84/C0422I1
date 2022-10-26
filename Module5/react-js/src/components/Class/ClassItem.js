@@ -3,6 +3,7 @@ import { useParams } from 'react-router-dom';
 import StudentService from './../../services/studentService';
 import ClassService from './../../services/classService';
 import Spinner from "../Spinner/Spinner";
+import CreateStudent from "./CreateStudent";
 
 function ClassItem() {
     const [state, setState] = useState({
@@ -11,6 +12,7 @@ function ClassItem() {
     });
     const [classRoom, setClassRoom] = useState("");
     const { classid } = useParams();
+    const [showModal, setShowModal] = useState(false);
     useEffect(() => {
         try {
             setState({ ...state, loading: true })
@@ -30,11 +32,20 @@ function ClassItem() {
 
         }
     }, [classid])
+
+    const handleShowModal = () => setShowModal(!showModal);
+
     const { loading, students } = state;
 
     return (
         <div className="col-9">
-            <h1>List Students of {classRoom}</h1>
+            {showModal && <CreateStudent handleShowModal={handleShowModal} classid={classid} />}
+            <div className="d-flex align-items-center">
+                <h1>List Students of {classRoom}</h1>
+                <button className="btn btn-danger btn-sm" onClick={handleShowModal}>
+                    <i className="fa fa-plus"> Add</i>
+                </button>
+            </div>
             {
                 loading ? <Spinner /> : (
                     <table className="table table-sm">
