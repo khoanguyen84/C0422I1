@@ -1,15 +1,24 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import noAvatar from '../../asset/images/noAvatar.jpg';
-import StudentService from './../../services/studentService';
+import StudentService from '../../services/studentService';
 import { toast } from 'react-toastify';
-function CreateStudent(props) {
-    const { handleShowCreateModal, classid, setState } = props;
+function ModifyStudent(props) {
+    const { handleShowModifyModal, classid, studentId, setState } = props;
     const [student, setStudent] = useState({
+        id: studentId,
         fullname: "",
         email: "",
         avatar: "",
         classId: classid
     })
+
+    useEffect(() => {
+        async function getData() {
+            let studentRes = await StudentService.getStudent(studentId);
+            setStudent(studentRes.data);
+        }
+        getData();
+    }, [studentId])
 
     const handleInput = (e) => {
         setStudent({
@@ -22,24 +31,25 @@ function CreateStudent(props) {
 
         try {
             setState({ loading: true })
-            let createRes = await StudentService.createStudent(student);
-            if (createRes.data) {
-                toast.success("Student created success!", { autoClose: 1000 });
+            let updateRes = await StudentService.updateStudent(student);
+            if (updateRes.data) {
+                toast.success("Student updated success!", { autoClose: 1000, position:'bottom-right' });
                 let studentRes = await StudentService.getStudents();
                 setState({
                     students: studentRes.data.filter(item => item.classId === classid),
                     loading: false
                 });
                 setStudent({
+                    id: studentId,
                     fullname: "",
                     email: "",
                     avatar: "",
                     classId: classid
                 });
-                handleShowCreateModal(true);
+                handleShowModifyModal(true);
             }
         } catch (error) {
-            toast.error(error.mesage);
+            toast.error(error.message);
         }
     }
 
@@ -62,8 +72,8 @@ function CreateStudent(props) {
                             <input type="url" value={avatar} className="form-control form-control-sm" name="avatar" onInput={handleInput} />
                         </div>
                         <div className="mt-1">
-                            <button type="submit" className="btn btn-warning btn-sm me-2">Create</button>
-                            <button type="button" className="btn btn-dark btn-sm" onClick={handleShowCreateModal}>Cancel</button>
+                            <button type="submit" className="btn btn-success btn-sm me-2">Save</button>
+                            <button type="button" className="btn btn-dark btn-sm" onClick={handleShowModifyModal}>Cancel</button>
                         </div>
                     </div>
                     <div className="col-6">
@@ -75,4 +85,4 @@ function CreateStudent(props) {
     )
 }
 
-export default CreateStudent; 
+export default ModifyStudent; 
